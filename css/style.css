@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+}
+.container > div {
+    width: 33%;
+    border: 1px black solid ;
+    min-height: 100px ;
+}
+.category-item {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px black solid;
+}
+.category-item:hover {
+    background-color: aqua;
+    color:brown;
+}
+.product-item {
+    padding: 10px;
+    font-size: 20px;
+    border-bottom: 1px black solid
+}
+.product-item:hover {
+    background-color: aqua;
+    color:brown;
+}
+.detail-info {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.details {
+    padding: 10px;
+    text-align: center;
+}

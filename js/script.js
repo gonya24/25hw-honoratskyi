@@ -21,6 +21,7 @@ function showProductHandler (event) {
         el.classList.add('product-item')
         const product = categoryProducts[i];
         el.innerHTML = `${product.name} ${product.model}`;
+        
         el.setAttribute('data-category', categoryIndex);    
         el.setAttribute('data-product',i);
         el.addEventListener('click',showDetail);
@@ -38,7 +39,9 @@ function showDetail(event){
     const elemDetail = document.createElement('div');
     elemDetail.setAttribute('data-category', categoryIndex);
     elemDetail.setAttribute('data-product', productIndex);
-    elemDetail.innerHTML =`Product: ${product.name} ${product.model}</br>Price: ${product.price}$`;
+    for (let j in product) {
+        elemDetail.innerHTML +=`${j}: ${product[j]}<br>`
+    }
     elemDetail.classList.add('detail-info')
     const buttonBuy = document.createElement('button');
     buttonBuy.innerHTML = 'Купити'
@@ -46,7 +49,6 @@ function showDetail(event){
         alert('Товар вже куплений!');
         container.innerHTML = '';
         const containerProd = document.querySelector('.product').innerHTML = '';;
-        
     })    
     container.appendChild(elemDetail)
     container.appendChild(buttonBuy)
